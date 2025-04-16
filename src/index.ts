@@ -2,16 +2,9 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-const knowledgeBaseId = process.env.RAGDOLL_KNOWLEDGE_BASE_ID;
-const apiKey = process.env.RAGDOLL_API_KEY;
-
-if (!knowledgeBaseId || !apiKey) {
-  throw new Error("RAGDOLL_KNOWLEDGE_BASE_ID and RAGDOLL_API_KEY must be set");
-}
-
 const server = new McpServer({
   name: "Ragdoll AI MCP Server",
-  version: "1.0.5",
+  version: "1.0.6",
 });
 
 server.tool(
@@ -22,8 +15,11 @@ server.tool(
     rerank: z.boolean().optional(),
   },
   async ({ query, topK, rerank }) => {
+    const knowledgeBaseId = process.env.RAGDOLL_KNOWLEDGE_BASE_ID;
+    const apiKey = process.env.RAGDOLL_API_KEY;
+
     const response = await fetch(
-      `https://api.ragdoll.ai/v1/knowledge-bases/${knowledgeBaseId}/query`,
+      `https://api.ragdollai.io/v1/knowledge-bases/${knowledgeBaseId}/query`,
       {
         method: "POST",
         headers: {
@@ -61,5 +57,3 @@ server.tool(
 
 const transport = new StdioServerTransport(process.stdin, process.stdout);
 await server.connect(transport);
-
-console.log("Ragdoll AI MCP Server started");
