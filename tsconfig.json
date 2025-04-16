@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strict": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "noEmit": true,
+    "moduleResolution": "node10",
+    "module": "esnext",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "target": "esnext",
+    "incremental": true
+  },
+  "exclude": ["**/node_modules"]
+}
