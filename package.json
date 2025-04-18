@@ -2,9 +2,9 @@
   "name": "ragdoll-mcp-server",
   "module": "src/index.ts",
   "type": "module",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "scripts": {
-    "build": "bun build src/index.ts --outdir build --banner '#!/usr/bin/env node' && shx chmod +x build/index.js"
+    "build": "bun build src/index.ts --outdir build --banner '#!/usr/bin/env node'"
   },
   "bin": {
     "ragdoll-mcp-server": "build/index.js"
