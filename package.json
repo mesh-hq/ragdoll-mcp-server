@@ -2,7 +2,7 @@
   "name": "ragdoll-mcp-server",
   "module": "src/index.ts",
   "type": "module",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "scripts": {
     "build": "bun build src/index.ts --outdir build --banner '#!/usr/bin/env node'"
   },
@@ -19,7 +19,6 @@
     "eslint-config-prettier": "^10.1.2",
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
-    "shx": "^0.4.0",
     "typescript-eslint": "^8.30.1"
   },
   "peerDependencies": {
