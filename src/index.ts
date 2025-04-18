@@ -4,7 +4,7 @@ import { z } from "zod";
 
 const server = new McpServer({
   name: "Ragdoll AI MCP Server",
-  version: "1.0.9",
+  version: "1.0.10",
 });
 
 server.tool(
